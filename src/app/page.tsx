@@ -1,7 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { getVariantAction } from "./actions";
 
-export default function Home() {
+export default async function Home() {
+  const variant = await getVariantAction("engineering-testing");
+
+  console.log("Variant:", variant);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
